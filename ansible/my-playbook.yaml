@@ -1,0 +1,9 @@
+- name: Istall deps
+  hosts: all
+  tasks:
+  - name: Install nginx
+    become: yes
+    become_user: root
+    apt:
+      name: nginx
+      update_cache: yes
