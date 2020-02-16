@@ -54,3 +54,7 @@ resource "aws_instance" "private_instance" {
     subnet_id = "${aws_subnet.my_subnet_2.id}"
     vpc_security_group_ids = ["${aws_security_group.my_sec_group.id}"]
 }
+
+output "master_ip" {
+    value = "Master IP ${aws_instance.public_instance.public_ip}"
+}
